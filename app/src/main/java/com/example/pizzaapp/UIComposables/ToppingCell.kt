@@ -15,13 +15,13 @@ import com.example.pizzaapp.model.Topping
 import com.example.pizzaapp.onCheckboxChange
 
 @Composable
- fun ToppingCell(context: Context) {
+ fun ToppingCell(topping: String, placement: String, onCheckedChange :(Boolean) ->Unit) {
     Row {
-        Checkbox(checked = true, onCheckedChange = ::onCheckboxChange)
+        Checkbox(checked = true, onCheckedChange = onCheckedChange)
         Spacer(modifier = Modifier.width(8.dp)) // Add spacing between elements (optional)
         Column() {
-            Text(text = Topping.TOPPING_BASIL.getLocalizedString(context))
-            Text(text = Placement.PLACEMENT_LEFT.getLocalizedString(context))
+            Text(text = topping)
+            Text(text = placement)
         }
     }
 }
