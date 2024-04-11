@@ -4,10 +4,10 @@ import android.content.Context
 import androidx.annotation.StringRes
 import com.example.pizzaapp.R
 
-enum class Topping( @StringRes val resourceId: Int) {
-    TOPPING_BASIL(R.string.topping_basil),
-    TOPPING_MUSHROOM(R.string.topping_mushroom),
-    TOPPING_PINEAPPLE(R.string.topping_pineapple);
+enum class Placement(@StringRes val resourceId: Int) {
+    PLACEMENT_ALL(R.string.placement_all),
+    PLACEMENT_LEFT(R.string.placement_left),
+    PLACEMENT_RIGHT(R.string.placement_right);
 
 
     /*

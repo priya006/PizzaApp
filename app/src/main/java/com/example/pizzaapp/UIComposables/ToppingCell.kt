@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.pizzaapp.model.Placement
 import com.example.pizzaapp.model.Topping
 import com.example.pizzaapp.onCheckboxChange
 
@@ -20,7 +21,7 @@ import com.example.pizzaapp.onCheckboxChange
         Spacer(modifier = Modifier.width(8.dp)) // Add spacing between elements (optional)
         Column() {
             Text(text = Topping.TOPPING_BASIL.getLocalizedString(context))
-            Text(text = Topping.PLACEMENT_LEFT.getLocalizedString(context))
+            Text(text = Placement.PLACEMENT_LEFT.getLocalizedString(context))
         }
     }
 }
