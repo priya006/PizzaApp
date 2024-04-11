@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.pizzaapp.UIComposables.PizzaBuilderScreen
 import com.example.pizzaapp.UIComposables.ToppingCell
 import com.example.pizzaapp.model.Placement
 import com.example.pizzaapp.model.Topping
@@ -21,12 +22,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val context = LocalContext.current
             PizzaAppTheme {
-                ToppingCell(
-                 topping = Topping.TOPPING_BASIL,
-                    placement = Placement.PLACEMENT_LEFT,
-                    isChecked = true)
+                PizzaBuilderScreen()
             }
         }
     }

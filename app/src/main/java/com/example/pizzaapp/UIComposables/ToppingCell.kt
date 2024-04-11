@@ -1,6 +1,7 @@
 package com.example.pizzaapp.UIComposables
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -21,19 +22,20 @@ import com.example.pizzaapp.model.Placement
 import com.example.pizzaapp.model.Topping
 
 @Composable
-fun ToppingCell(topping: Topping, placement: Placement?, isChecked : Boolean) {
+fun ToppingCell(topping: Topping, placement: Placement?, isChecked : Boolean , modifier : Modifier = Modifier) {
     // Track checkbox state
     val thisIsChecked = remember { mutableStateOf(isChecked) }
 
     Row(
         verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier.clickable { thisIsChecked.value = !thisIsChecked.value }
+        horizontalArrangement = Arrangement.Center,
+        modifier = modifier.clickable { thisIsChecked.value = !thisIsChecked.value }
         .padding(horizontal = 16.dp, vertical = 4.dp)
 
     ) {
         Checkbox(checked = thisIsChecked.value, onCheckedChange = {newState -> thisIsChecked.value = newState})
-        Spacer(modifier = Modifier.width(8.dp)) // Add spacing between elements (optional)
-        Column( modifier = Modifier.weight(1f)) {
+        Spacer(modifier = modifier.width(8.dp)) // Add spacing between elements (optional)
+        Column( modifier = modifier.weight(1f, fill = true)) {
             Text(text = stringResource(topping.resourceId),
                 style = MaterialTheme.typography.bodyLarge)
             if (placement != null) {

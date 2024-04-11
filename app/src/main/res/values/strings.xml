@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">PizzaApp</string>
 
-
+    <string name="place_order_button">PLACE ORDER</string>
     <string name="placement_none">None</string>
     <string name="placement_left">Left half</string>
     <string name="placement_right">Right half</string>
