@@ -22,16 +22,18 @@ import com.example.pizzaapp.model.Topping
 
 @Composable
 fun ToppingCell(topping: Topping, placement: Placement?, isChecked : Boolean) {
-    val thisIsChecked = remember { mutableStateOf(isChecked) } // Track checkbox state
+    // Track checkbox state
+    val thisIsChecked = remember { mutableStateOf(isChecked) }
 
     Row(
         verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier.clickable { thisIsChecked }
+        modifier = Modifier.clickable { thisIsChecked.value = !thisIsChecked.value }
         .padding(horizontal = 16.dp, vertical = 4.dp)
+
     ) {
         Checkbox(checked = thisIsChecked.value, onCheckedChange = {newState -> thisIsChecked.value = newState})
         Spacer(modifier = Modifier.width(8.dp)) // Add spacing between elements (optional)
-        Column() {
+        Column( modifier = Modifier.weight(1f)) {
             Text(text = stringResource(topping.resourceId),
                 style = MaterialTheme.typography.bodyLarge)
             if (placement != null) {
