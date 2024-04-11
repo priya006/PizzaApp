@@ -9,6 +9,7 @@ import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.pizzaapp.UIComposables.ToppingCell
 import com.example.pizzaapp.model.Placement
@@ -43,8 +44,8 @@ private fun GreetingPreview() {
             Row {
                 Checkbox(checked = true, onCheckedChange = {/*something */})
                 Column() {
-                    Text(text = "Pineapple")
-                    Text(text = "Whole pizza")
+                    Text(text = stringResource(Topping.TOPPING_BASIL.resourceId))
+                    Text(text = stringResource(Placement.PLACEMENT_ALL.resourceId))
                 }
             }
     }
