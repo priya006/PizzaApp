@@ -5,9 +5,9 @@ import androidx.annotation.StringRes
 import com.example.pizzaapp.R
 
 enum class Topping( @StringRes val resourceId: Int) {
-    TOPPING_BASIL(R.string.topping_basil),
-    TOPPING_MUSHROOM(R.string.topping_mushroom),
-    TOPPING_PINEAPPLE(R.string.topping_pineapple);
+    TOPPING_BASIL(resourceId = R.string.topping_basil),
+    TOPPING_MUSHROOM(resourceId = R.string.topping_mushroom),
+    TOPPING_PINEAPPLE(resourceId = R.string.topping_pineapple);
 
 
     /*

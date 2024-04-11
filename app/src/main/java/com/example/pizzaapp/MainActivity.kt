@@ -24,9 +24,9 @@ class MainActivity : ComponentActivity() {
             val context = LocalContext.current
             PizzaAppTheme {
                 ToppingCell(
-                 topping = Topping.TOPPING_BASIL.getLocalizedString(context),
-                    placement = Placement.PLACEMENT_LEFT.getLocalizedString(context),
-                    onCheckedChange = {})
+                 topping = Topping.TOPPING_BASIL,
+                    placement = Placement.PLACEMENT_LEFT,
+                    isChecked = true)
             }
         }
     }
@@ -39,14 +39,23 @@ fun onCheckboxChange(isChecked: Boolean) {
 
 @Preview(showBackground = true)
 @Composable
-private fun GreetingPreview() {
+private fun WithTopping() {
     PizzaAppTheme {
-            Row {
-                Checkbox(checked = true, onCheckedChange = {/*something */})
-                Column() {
-                    Text(text = stringResource(Topping.TOPPING_BASIL.resourceId))
-                    Text(text = stringResource(Placement.PLACEMENT_ALL.resourceId))
-                }
+        Row {
+            Checkbox(checked = true, onCheckedChange = {/*something */ })
+            Column() {
+                Text(text = stringResource(Topping.TOPPING_BASIL.resourceId))
+                Text(text = stringResource(Placement.PLACEMENT_ALL.resourceId))
             }
+        }
     }
 }
+
+    @Preview(showBackground = true)
+    @Composable
+    private fun WithOutTopping() {
+        PizzaAppTheme {
+            ToppingCell(topping = Topping.TOPPING_BASIL, placement = null, isChecked = false )
+            }
+        }
+
