@@ -2,7 +2,7 @@ JetPack Compose Fun Adventure!!!
 
 1. Added String Resource Enums and Update Text Composables
 2. With LazyColumn we displayed the list of data
-3. 
+3. "RESUME PLAN" Hold for a while will resume with Defining UI state with  Jetpack compose 
 
 
 
